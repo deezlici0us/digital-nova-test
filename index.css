@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+/* === Tailwind v4 Theme (replaces tailwind.config) === */
+@theme {
+  --color-nova-red: #FF1F1F;
+  --color-nova-black: #050505;
+  --color-nova-dark: #0A0A0A;
+  --color-nova-gray: #1F1F1F;
+  --color-nova-light: #E5E5E5;
+
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Archivo Black', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+
+  --animate-spin-slow: spin 12s linear infinite;
+  --animate-marquee: marquee 25s linear infinite;
+  --animate-marquee-reverse: marqueeReverse 25s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes marqueeReverse {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0%); }
+}
+
+/* === Skip to Content (a11y) === */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 100;
+  padding: 8px 16px;
+  background: #FF1F1F;
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 14px;
+}
+.skip-link:focus {
+  top: 8px;
+}
+
+/* === Reduced Motion (a11y) === */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* === Select Chevron === */
+select.custom-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px;
+  padding-right: 48px;
+}
+
+/* === Smooth Scroll === */
+html {
+  scroll-behavior: smooth;
+}
+
+/* === Text Outline Styles === */
+.text-outline {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+  color: transparent;
+}
+.text-outline-red {
+  -webkit-text-stroke: 1px #FF1F1F;
+  color: transparent;
+}
+
+/* === Custom Scrollbar === */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #FF1F1F;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #cc0000;
+}
+
+body {
+  background-color: #050505;
+  color: white;
+}
